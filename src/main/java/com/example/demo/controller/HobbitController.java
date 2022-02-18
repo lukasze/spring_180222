@@ -1,8 +1,17 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.HobbitService;
 import org.springframework.web.bind.annotation.RestController;
-// Supermoc - kontakt z klientem HTTP
+
 @RestController
-// @RestController = @Controller + @ResponseBody = dane zamiast przekierowania na widok
 public class HobbitController {
+
+    private final HobbitService hobbitService;
+
+    /*
+        Jeśli jeden konstruktor, nie musimy jawnie wstawiać @Autowired
+     */
+    public HobbitController(HobbitService hobbitService) {
+        this.hobbitService = hobbitService;
+    }
 }
